@@ -5,12 +5,12 @@ import (
 	"fmt"
 )
 
-func printOutput(output int) {
+func printOutput[T string | int](output T) {
 	fmt.Println("Output:")
 	fmt.Println(output)
 }
 
-func Run(currentDirectory string, functionPart1 func(input string) int, functionPart2 ...func(input string) int) {
+func Run[T string | int](currentDirectory string, functionPart1 func(input string) T, functionPart2 ...func(input string) T) {
 	part := flag.Int("part", 1, "Part 1 or 2")
 	flag.Parse()
 	if part == nil {
