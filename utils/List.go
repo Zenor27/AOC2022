@@ -8,3 +8,13 @@ func RemoveFromList(l []int, valueToRemove int) []int {
 	}
 	return l
 }
+
+func GetMaxFromList(l []int) int {
+	max := 0
+	for _, v := range l {
+		if v > max {
+			max = v
+		}
+	}
+	return max
+}
